@@ -1,4 +1,4 @@
-module Vendor.Person where
+module ACMECorp.Person where
 
 import Data.Argonaut.Core (Json)
 import Data.Argonaut.Decode (class DecodeJson, JsonDecodeError)

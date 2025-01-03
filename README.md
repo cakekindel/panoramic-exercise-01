@@ -31,29 +31,18 @@ You should design the validated Person based upon your own personal experience.
 </details>
 
 ## Output
-I decided to implement this as documented purescript stubbed files, for:
+[Documentation](https://cakekindel.github.io/panoramic-exercise-01/Vendor.Person.html)
+
+I decided to implement this as documented purescript stub files, for:
  - Compiler type correctness + feedback loop
- - Documentation Generation <>
+ - Docgen
 
-## Modules
-### `Data.Telecom.Phone`
-
-### `Vendor.Person.Partial`
-
-```haskell
-module Vendor.Person.Partial where
-
-import Prelude
-{- snip -}
-import Data.USGov (SocialSecurityNumber)
-import Data.Person.MaritalStatus (MaritalStatus)
-import Data.Telecom.Phone (MaritalStatus)
-
-type PersonFields r =
-  ( firstName :: String
-  , lastName :: String
-  , maritalStatus :: MaritalStatus
-  , phone :: PhoneNumber
-  , ssn :: SocialSecurityNumber
-  )
-```
+### Modules
+* [`ACMECorp.Person`](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
+* `Data`
+  * [`Person.MaritalStatus`](https://cakekindel.github.io/panoramic-exercise-01/Data.Person.MaritalStatus.html)
+  * [`Telecom.Phone`](https://cakekindel.github.io/panoramic-exercise-01/Data.Telecom.Phone.html)
+  * [`USGov.SocialSecurityNumber`](https://cakekindel.github.io/panoramic-exercise-01/Data.USGov.SocialSecurityNumber.html)
+* `Type.Row`
+  * [`ExpandFields`](https://cakekindel.github.io/panoramic-exercise-01/Type.Row.ExpandFields.html)
+  * [`MaybeFields`](https://cakekindel.github.io/panoramic-exercise-01/Type.Row.MaybeFields.html)
