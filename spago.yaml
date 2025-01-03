@@ -1,0 +1,19 @@
+package:
+  name: panoramic-exercise-01
+  build:
+    strict: true
+    pedanticPackages: true
+  dependencies:
+    - argonaut-codecs
+    - argonaut-core
+    - console
+    - effect
+    - either
+    - enums
+    - maybe
+    - partial
+    - prelude
+workspace:
+  packageSet:
+    registry: 62.2.4
+  extraPackages: {}

@@ -29,3 +29,31 @@ You should design the validated Person based upon your own personal experience.
   - If there are any validations that cannot be represented in types then please do include a few code comments discussing those.
 - Briefly describe the Module organization for these types and what should be exposed and what should be hidden. Be ready to discuss how this impacts total system maintainability.
 </details>
+
+## Output
+I decided to implement this as documented purescript stubbed files, for:
+ - Compiler type correctness + feedback loop
+ - Documentation Generation <>
+
+## Modules
+### `Data.Telecom.Phone`
+
+### `Vendor.Person.Partial`
+
+```haskell
+module Vendor.Person.Partial where
+
+import Prelude
+{- snip -}
+import Data.USGov (SocialSecurityNumber)
+import Data.Person.MaritalStatus (MaritalStatus)
+import Data.Telecom.Phone (MaritalStatus)
+
+type PersonFields r =
+  ( firstName :: String
+  , lastName :: String
+  , maritalStatus :: MaritalStatus
+  , phone :: PhoneNumber
+  , ssn :: SocialSecurityNumber
+  )
+```
