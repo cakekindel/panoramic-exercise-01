@@ -1,5 +1,8 @@
 {
   "package": "@acmecorp/person",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "purs-tidy": "^0.11.0"
+  }
 }
