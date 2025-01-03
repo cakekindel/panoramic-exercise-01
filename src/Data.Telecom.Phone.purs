@@ -1,4 +1,4 @@
-module Data.Telecom.Phone (Phone, fromString) where
+module Data.Telecom.Phone (Phone, fromString, toString, countryCode, number) where
 
 import Prelude
 
@@ -29,3 +29,12 @@ derive newtype instance DecodeJson Phone
 
 fromString :: String -> Maybe Phone
 fromString = unsafeCrashWith "unimplemented"
+
+toString :: Phone -> String
+toString = unsafeCrashWith "unimplemented"
+
+countryCode :: Phone -> Int
+countryCode = unsafeCrashWith "unimplemented"
+
+number :: Phone -> Int
+number = unsafeCrashWith "unimplemented"

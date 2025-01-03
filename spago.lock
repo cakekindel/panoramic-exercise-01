@@ -7,8 +7,6 @@
           "dependencies": [
             "argonaut-codecs",
             "argonaut-core",
-            "console",
-            "effect",
             "either",
             "enums",
             "maybe",
@@ -20,7 +18,6 @@
             "argonaut-core",
             "arrays",
             "bifunctors",
-            "console",
             "const",
             "contravariant",
             "control",
@@ -659,15 +656,6 @@
         "newtype",
         "prelude",
         "tuples"
-      ]
-    },
-    "console": {
-      "type": "registry",
-      "version": "6.1.0",
-      "integrity": "sha256-CxmAzjgyuGDmt9FZW51VhV6rBPwR6o0YeKUzA9rSzcM=",
-      "dependencies": [
-        "effect",
-        "prelude"
       ]
     },
     "const": {

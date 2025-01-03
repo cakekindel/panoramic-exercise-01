@@ -1,12 +1,10 @@
-module Data.USGov.SocialSecurityNumber (SocialSecurityNumber, fromString) where
+module Data.USGov.SocialSecurityNumber (SocialSecurityNumber, fromString, toString, toInt) where
 
 import Prelude
 
 import Data.Argonaut.Decode.Class (class DecodeJson)
 import Data.Argonaut.Encode.Class (class EncodeJson)
-import Data.Generic.Rep (class Generic)
 import Data.Maybe (Maybe)
-import Data.Show.Generic (genericShow)
 import Partial.Unsafe (unsafeCrashWith)
 
 -- | ## U.S. Social Security Number
@@ -45,3 +43,9 @@ instance DecodeJson SocialSecurityNumber where
 
 fromString :: String -> Maybe SocialSecurityNumber
 fromString = unsafeCrashWith "unimplemented"
+
+toString :: SocialSecurityNumber -> String
+toString = unsafeCrashWith "unimplemented"
+
+toInt :: SocialSecurityNumber -> Int
+toInt = unsafeCrashWith "unimplemented"

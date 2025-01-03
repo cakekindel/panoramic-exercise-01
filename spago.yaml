@@ -1,13 +1,13 @@
 package:
   name: panoramic-exercise-01
   build:
+    censorProjectWarnings:
+      - 'UnusedDeclaration'
     strict: true
     pedanticPackages: true
   dependencies:
     - argonaut-codecs
     - argonaut-core
-    - console
-    - effect
     - either
     - enums
     - maybe

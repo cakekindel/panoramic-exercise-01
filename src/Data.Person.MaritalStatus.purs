@@ -9,7 +9,6 @@ import Data.Enum (class BoundedEnum, class Enum)
 import Data.Enum.Generic (genericCardinality, genericFromEnum, genericPred, genericSucc, genericToEnum)
 import Data.Generic.Rep (class Generic)
 import Partial.Unsafe (unsafeCrashWith)
-import Prim.TypeError as TypeError
 
 -- | ## Person's Marital Status
 -- |

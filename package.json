@@ -1,2 +1,5 @@
 {
+  "package": "@acmecorp/person",
+  "private": true,
+  "type": "module"
 }
