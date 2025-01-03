@@ -32,7 +32,11 @@ You should design the validated Person based upon your own personal experience.
 
 ## Output
 Implemented as documented stub purescript files, using purescript's documentation generation
-to host a browsable output hosted on [Github pages](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
+to host a browsable output hosted on [Github pages](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html).
+
+Note that `purs` emits documentation for **all** modules, not just these. The relevant bits are highlighted here:
+
+![./note.png]
 
 ### Modules
 * [`ACMECorp.Person`](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
