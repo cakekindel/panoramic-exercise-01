@@ -36,7 +36,7 @@ to host a browsable output hosted on [Github pages](https://cakekindel.github.io
 
 Note that `purs` emits documentation for **all** modules, not just these. The relevant bits are highlighted here:
 
-![./note.png]
+![A screenshot of the API docs with a big helpful red arrow pointing out that you should not interpret the smorgesbord of additionally compiled module documentation as work I did for this code exercise; in fact I did not write very much code at all, so it would be silly and disingenuous for me to allow you to assume that the credit is mine for all of this lovely code. If you're reading this, hello! My name is Orion and I have a penchant for mischief, as is hopefully evident by this 500 character alt text on this image, which is arguably silly and unnecessary in the first place but I have no guarantee that you, dear reader, will see the generated pursuit docs and immediately intuit which links are relevant and which are not. Okay, bye!](./note.png)
 
 ### Modules
 * [`ACMECorp.Person`](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
