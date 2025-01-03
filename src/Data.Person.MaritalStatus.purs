@@ -6,7 +6,13 @@ import Data.Argonaut.Decode (class DecodeJson)
 import Data.Argonaut.Encode (class EncodeJson)
 import Data.Bounded.Generic (genericBottom, genericTop)
 import Data.Enum (class BoundedEnum, class Enum)
-import Data.Enum.Generic (genericCardinality, genericFromEnum, genericPred, genericSucc, genericToEnum)
+import Data.Enum.Generic
+  ( genericCardinality
+  , genericFromEnum
+  , genericPred
+  , genericSucc
+  , genericToEnum
+  )
 import Data.Generic.Rep (class Generic)
 import Partial.Unsafe (unsafeCrashWith)
 
@@ -31,6 +37,7 @@ derive instance Generic MaritalStatus _
 derive instance Eq MaritalStatus
 instance EncodeJson MaritalStatus where
   encodeJson = unsafeCrashWith "unimplemented"
+
 instance DecodeJson MaritalStatus where
   decodeJson = unsafeCrashWith "unimplemented"
 
@@ -38,9 +45,11 @@ derive instance Ord MaritalStatus
 instance Enum MaritalStatus where
   pred = genericPred
   succ = genericSucc
+
 instance Bounded MaritalStatus where
   top = genericTop
   bottom = genericBottom
+
 instance BoundedEnum MaritalStatus where
   cardinality = genericCardinality
   fromEnum = genericFromEnum

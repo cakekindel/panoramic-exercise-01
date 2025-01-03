@@ -1,4 +1,9 @@
-module Data.USGov.SocialSecurityNumber (SocialSecurityNumber, fromString, toString, toInt) where
+module Data.USGov.SocialSecurityNumber
+  ( SocialSecurityNumber
+  , fromString
+  , toString
+  , toInt
+  ) where
 
 import Prelude
 

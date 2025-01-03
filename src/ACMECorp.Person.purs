@@ -88,8 +88,8 @@ type PartialPersonRow =
 -- | `{}` results in `Right {firstName: Nothing, lastName: Nothing, ...}`
 -- |
 -- | `{"firstName": "Henry"}` results in `Right {firstName: Just "Henry", lastName: Nothing, ...}`
-decodePartialPerson
-  :: forall part missing personrl partpersonrl.
+decodePartialPerson ::
+  forall part missing personrl partpersonrl.
   DecodeJson (Record part) =>
   Union part missing PersonRow =>
   RowToList PersonRow personrl =>

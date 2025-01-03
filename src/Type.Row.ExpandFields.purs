@@ -36,26 +36,28 @@ import Type.Row.MaybeFields (class MaybeFields)
 -- | fooExpand {baz: "hi"}    -- compile error
 -- | ```
 class
-  (MaybeFields rl r rmayberl rmaybe) <=
-      ExpandFields rl r rmayberl rmaybe
-      | rl -> r rmayberl rmaybe where
-  expandFields :: forall part missing. Union part missing r => Record part -> Record rmaybe
+  ( MaybeFields rl r rmayberl rmaybe
+  ) <=
+  ExpandFields rl r rmayberl rmaybe
+  | rl -> r rmayberl rmaybe where
+  expandFields ::
+    forall part missing. Union part missing r => Record part -> Record rmaybe
 
 instance (MaybeFields rl r rmayberl rmaybe) => ExpandFields rl r rmayberl rmaybe where
   expandFields = unsafeCrashWith "unimplemented"
 
 type Foo = (foo :: String, bar :: Int)
 
-fooExpand
-  :: forall part missing foorl foomaybe foomayberl.
+fooExpand ::
+  forall part missing foorl foomaybe foomayberl.
   Union part missing Foo =>
   RowToList Foo foorl =>
   RowToList foomaybe foomayberl =>
   MaybeFields foorl Foo foomayberl foomaybe =>
   ExpandFields foorl Foo foomayberl foomaybe =>
   Record part ->
-  {foo :: Maybe String, bar :: Maybe Int}
+  { foo :: Maybe String, bar :: Maybe Int }
 fooExpand _ = unsafeCrashWith "unimplemented"
 
-fooExpandWorks :: {foo :: Maybe String, bar :: Maybe Int}
-fooExpandWorks = fooExpand {foo: "hello"}
+fooExpandWorks :: { foo :: Maybe String, bar :: Maybe Int }
+fooExpandWorks = fooExpand { foo: "hello" }

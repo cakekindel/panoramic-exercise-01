@@ -29,22 +29,35 @@ import Prim.RowList (class RowToList, Cons, Nil, RowList)
 -- | 
 -- | fooMaybe {foo: Just "hello", bar: Nothing} -- compiles
 -- | ```
-class MaybeFields :: RowList Type -> Row Type -> RowList Type -> Row Type -> Constraint
-class (RowToList a arl, RowToList b brl) <= MaybeFields arl a brl b | arl -> a brl b
+class MaybeFields ::
+  RowList Type -> Row Type -> RowList Type -> Row Type -> Constraint
+class
+  ( RowToList a arl
+  , RowToList b brl
+  ) <=
+  MaybeFields arl a brl b
+  | arl -> a brl b
 
 instance MaybeFields Nil () Nil ()
 instance
-    ( Cons k v atail a
-    , Cons k (Maybe v) btail b
-    , RowToList a (Cons k v atailrl)
-    , RowToList b (Cons k (Maybe v) btailrl)
-    , MaybeFields atailrl atail btailrl btail
-    ) => MaybeFields (Cons k v atailrl) a (Cons k (Maybe v) btailrl) b
+  ( Cons k v atail a
+  , Cons k (Maybe v) btail b
+  , RowToList a (Cons k v atailrl)
+  , RowToList b (Cons k (Maybe v) btailrl)
+  , MaybeFields atailrl atail btailrl btail
+  ) =>
+  MaybeFields (Cons k v atailrl) a (Cons k (Maybe v) btailrl) b
 
 type Foo = (foo :: String, bar :: Int)
 
-fooMaybe :: forall r rl foorl. RowToList Foo foorl => RowToList r rl => MaybeFields foorl Foo rl r => Record r -> Unit
+fooMaybe ::
+  forall r rl foorl.
+  RowToList Foo foorl =>
+  RowToList r rl =>
+  MaybeFields foorl Foo rl r =>
+  Record r ->
+  Unit
 fooMaybe _ = unsafeCrashWith "unimplemented"
 
 fooMaybeWorks :: Unit
-fooMaybeWorks = fooMaybe {foo: Just "hello", bar: Nothing}
+fooMaybeWorks = fooMaybe { foo: Just "hello", bar: Nothing }
