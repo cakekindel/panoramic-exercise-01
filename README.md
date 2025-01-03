@@ -31,11 +31,8 @@ You should design the validated Person based upon your own personal experience.
 </details>
 
 ## Output
-[Documentation](https://cakekindel.github.io/panoramic-exercise-01/Vendor.Person.html)
-
-I decided to implement this as documented purescript stub files, for:
- - Compiler type correctness + feedback loop
- - Docgen
+Implemented as documented stub purescript files, using purescript's documentation generation
+to host a browsable output hosted on [Github pages](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
 
 ### Modules
 * [`ACMECorp.Person`](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
@@ -46,3 +43,6 @@ I decided to implement this as documented purescript stub files, for:
 * `Type.Row`
   * [`ExpandFields`](https://cakekindel.github.io/panoramic-exercise-01/Type.Row.ExpandFields.html)
   * [`MaybeFields`](https://cakekindel.github.io/panoramic-exercise-01/Type.Row.MaybeFields.html)
+
+### Generated Documentation
+[Generated docs are available here](https://cakekindel.github.io/panoramic-exercise-01/ACMECorp.Person.html)
