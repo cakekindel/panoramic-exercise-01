@@ -6,9 +6,9 @@ import Prim.Row (class Union)
 import Prim.RowList (class RowToList)
 import Type.Row.MaybeFields (class MaybeFields)
 
--- | Given a desired destination record `r`, and an input record
--- | which is part of it, expand the input record to the full
--- | type `r` with omitted fields set to `Nothing`.
+-- | Widen a partial record to a full destination record type, with
+-- | all keys wrapped in `Maybe` to indicate presence or lack of presence
+-- | in the original record.
 -- |
 -- | **Note**: In production code, I would rename this class to something
 -- | like `ExpandFieldsImpl` and add a superclass with flipped functional
@@ -40,8 +40,14 @@ class
   ) <=
   ExpandFields rl r rmayberl rmaybe
   | rl -> r rmayberl rmaybe where
+  -- | Given any arbitrary partial record `part` which is
+  -- | `missing` some fields from `r`, transform a record of
+  -- | `part` to `rmaybe`, which is `r` with all fields wrapped in `Maybe`.
   expandFields ::
-    forall part missing. Union part missing r => Record part -> Record rmaybe
+    forall part missing.
+    Union part missing r =>
+    Record part ->
+    Record rmaybe
 
 instance (MaybeFields rl r rmayberl rmaybe) => ExpandFields rl r rmayberl rmaybe where
   expandFields = unsafeCrashWith "unimplemented"

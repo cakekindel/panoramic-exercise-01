@@ -30,7 +30,11 @@ import Prim.RowList (class RowToList, Cons, Nil, RowList)
 -- | fooMaybe {foo: Just "hello", bar: Nothing} -- compiles
 -- | ```
 class MaybeFields ::
-  RowList Type -> Row Type -> RowList Type -> Row Type -> Constraint
+  RowList Type ->
+  Row Type ->
+  RowList Type ->
+  Row Type ->
+  Constraint
 class
   ( RowToList a arl
   , RowToList b brl
